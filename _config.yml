@@ -8,10 +8,10 @@ encoding:         "utf-8"
 permalink:        pretty
 
 # Setup
-title:            MyBlog
+title:            远的小窝
 tagline:          '有梦想，放手去追！'
 description:      '欢迎大家来到我的个人博客'
-url:              http://shelldone.com
+url:              http://166yuan.github.io
 
 author:
   name:           '166yuan'
@@ -22,8 +22,3 @@ paginate:         5
 # Custom vars
 version:          1.0.0
 
-# duoshuo
-comments :
-    provider : duoshuo
-    duoshuo :
-      short_name : soohu
