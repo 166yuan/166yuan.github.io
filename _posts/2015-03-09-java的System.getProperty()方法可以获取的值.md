@@ -2,7 +2,7 @@
 layout: post
 author: csdn
 titile: java的System.getProperty()方法可以获取的值
-category: java
+category: 专业技术
 tag: java 
 ---
   ###java的System.getProperty()方法可以获取的值
