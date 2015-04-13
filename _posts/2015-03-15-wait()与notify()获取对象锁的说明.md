@@ -14,23 +14,22 @@ tag: 安卓
 2.当一个对象调用notify（）方法时，所有在这个对象上等待的线程将被唤醒。
 
 最近在写一个安卓的tcp/udp IM程序时，遇到这个问题，网友使用的一种代码方式，我学习了下。
+{% highlight java linenos %}	
+	synchronized (this) {
 
-```
-synchronized (this) {
+	notify();
 
-notify();
-
-}
-```
+	}
+{% endhighlight %}
 
 当客户端有消息要发送时，输出流要notify对象上等待的线程来发送消息。
 
-```
+
 相同的，当发送完消息时，线程就进入等待状态，不占用系统资源
+{% highlight java linenos %}
+	synchronized (this) {
 
-synchronized (this) {
+	wait();// 发送完消息后，线程进入等待状态
 
-wait();// 发送完消息后，线程进入等待状态
-
-}
-```
+	}
+{% endhighlight %}
