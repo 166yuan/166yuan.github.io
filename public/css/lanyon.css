@@ -553,7 +553,9 @@ a.sidebar-nav-item:focus {
 }
 .page,
 .post {
-  margin-bottom: 4em;
+    margin-bottom: 4em;
+  height:15em;
+  overflow:hidden;
 }
 
 
