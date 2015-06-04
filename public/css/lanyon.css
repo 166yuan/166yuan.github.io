@@ -619,6 +619,7 @@ a.sidebar-nav-item:focus {
 /*文章内容*/
 .post-content {
   margin-top: 10px;
+  overflow:hidden;
 }
 
 /*阅读全文*/
