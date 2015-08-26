@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
 <meta name="baidu-site-verification" content="DrgFR5391U" />
   {% include head.html %}
 
@@ -7,11 +7,6 @@
 
     {% include sidebar.html %}
 
-
-    
-
-    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
-         content to avoid any CSS collisions with our real content. -->
     <div class="wrap">
       <div class="masthead">
         <div class="container">
@@ -26,13 +21,16 @@
         {{ content }}
       </div>
     </div>
-    
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+    <div class="rocket" id="rocket">
+      <a href="javascript:void(0)">
+      <i class="icon iconfont">&#xe608</i>
+      </a>
+    </div>
     {% include footer.html %}
-
-    <!-- "The ending isn’t any more important than the moments leading to it." -Dr. Eva Rosalene, To The Moon -->
   </body>
 </html>
+<script src="/public/js/build/all.min.js" async="async" defer="defer"></script>
 <script>
 var _hmt = _hmt || [];
 (function() {

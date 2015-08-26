@@ -2,18 +2,6 @@
 layout: default
 title: Home
 ---
-<!-- audioplayer -->
-  <div id="amazingaudioplayer-1">
-          <ul class="amazingaudioplayer-audios" style="display:none;">
-              <li data-artist="泽野弘之" data-title="Egoist - エウテルペ~silence~" data-album="guilty crown" data-info="" data-image="/public/img/dieqi.jpg" data-duration="0">
-                  <div class="amazingaudioplayer-source" data-src="http://7xiwi7.com1.z0.glb.clouddn.com/Egoist - エウテルペ~silence~.mp3" data-type="audio/mpeg" />
-              </li>
-          </ul>
-          <div class="amazingaudioplayer-engine"><a href="http://amazingaudioplayer.com" title="audio player for website">jquery audio player</a></div>
-  </div>
-<!-- endAudioPlayer -->
-
-
 <div class="posts">
   {% for post in paginator.posts %}
   <div class="post">
@@ -24,16 +12,16 @@ title: Home
           {{ post.title }}
         </a>
       </h1>
-        <p class="post-info">
+        <p class="post-info"><i class="icon iconfont">&#xe607</i>
         {% if post.author == "166yuan" %}
           {{ post.author }}原创
         {% else %}
           转载{{ post.author }}
         {% endif %}
         </p>
-        <span class="post-info"><i class="fa fa-calendar"></i>&nbsp{{ post.date | date: "%Y" }}/{{ post.date | date: "%m" }}/{{ post.date | date: "%d" }}  </span>
-        <span class="post-info"><i class="fa fa-book"></i>&nbsp<a href="/category/index.html#{{ post.categories }}">{{ post.categories }}</a></span>
-        <span class="post-info"><i class="fa fa-tags"></i>&nbsp<a href="/tag/index.html#{{ post.tags | first }}">{{ post.tags | first }}</a></span>  
+        <span class="post-info"><i class="icon iconfont">&#xe604</i>&nbsp{{ post.date | date: "%Y" }}/{{ post.date | date: "%m" }}/{{ post.date | date: "%d" }}  </span>
+        <span class="post-info"><i class="icon iconfont">&#xe602</i>&nbsp<a href="/category/index.html#{{ post.categories }}">{{ post.categories }}</a></span>
+        <span class="post-info"><i class="icon iconfont">&#xe603</i>&nbsp<a href="/tag/index.html#{{ post.tags | first }}">{{ post.tags | first }}</a></span>  
         <span class="post-info"><a href="/tag/index.html#{{ post.tags[1] }}">{{ post.tags[1] }}</a></span>
         <span class="post-info"><a href="/tag/index.html#{{ post.tags[2] }}">{{ post.tags[2] }}</a></span>
     </div>

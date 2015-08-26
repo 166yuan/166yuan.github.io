@@ -278,9 +278,11 @@ tbody tr:nth-child(odd) th {
   left: 0;
   width: 100%;
   padding: 0.5rem 1rem;
-  margin: 0 auto 3rem;
+   margin: 0 auto;
+  /* margin: 0 auto 3rem; */
   border-bottom: 1px solid #eee;
   z-index: 100;
+  background-color: #03A9F4;
 }
 .masthead-title {
   margin-top: 0;
@@ -290,7 +292,7 @@ tbody tr:nth-child(odd) th {
 
 /*HUS on hover effect*/
 .masthead-title a {
-  color: #ac4142;
+  color: #ffffff;
   display: inline-block;
   font-size: 1.8rem;
   line-height: 1.8rem;
@@ -325,7 +327,7 @@ tbody tr:nth-child(odd) th {
 .masthead-title small {
   font-size: 75%;
   font-weight: 400;
-  color: #c0c0c0;
+  color: #B3E5FC;
   letter-spacing: 0;
 }
 
@@ -365,10 +367,10 @@ tbody tr:nth-child(odd) th {
   overflow-y: auto;
   font-family: "PT Sans", Helvetica, Arial, sans-serif;
   font-size: .875rem; /* 15px */
-  color: rgba(255,255,255,.6);
-  background-color: #202020;
-  -webkit-transition: all .3s ease-in-out;
-          transition: all .3s ease-in-out;
+  color: #fff;
+  background-color: #03A9F4;
+  box-shadow: 0 0 10px rgba(0,0,0,.5);
+  transition: all .3s ease-in-out;
 }
 
 
@@ -379,12 +381,11 @@ tbody tr:nth-child(odd) th {
   margin: 0 auto 10px;
   border: 2px solid rgba(255,255,255,0.5);
   border-radius: 41px;
-  transition: all 0.5s ease-in 0;
+  transition: all .5s ease-in;
 }
 .sidebar-logo img:hover,:focus {
   border-radius: 5px;
   transform: rotate(360deg);
-
 }
 
 /* Sidebar content */
@@ -394,6 +395,9 @@ tbody tr:nth-child(odd) th {
 }
 .sidebar-item {
   padding: 1rem;
+}
+.sidebar-item p{
+  text-align: center;
 }
 .sidebar-item p:last-child {
   margin-bottom: 0;
@@ -406,7 +410,7 @@ tbody tr:nth-child(odd) th {
 .sidebar-nav-item {
   display: block;
   padding: .5rem 1.5rem;
-  border-top: 1px solid rgba(255,255,255,.1);
+  /* border-top: 1px solid rgba(255,255,255,.1); */
   /*transition: 0.4s ease-in-out 0;*/
 }
 .sidebar-nav-item.active,
@@ -427,15 +431,16 @@ a.sidebar-nav-item:focus {
 /* Style the `label` that we use to target the `.sidebar-checkbox` */
 .sidebar-toggle {
   position: absolute;
-  top:  1rem;
+  top:  .5rem;
   left: 1rem;
   display: block;
   width: 2.2rem;
   padding: .5rem .65rem;
-  color: #505050;
-  background-color: #fff;
+  color: #fff;
+  background-color: #03A9F4;
   border-radius: 4px;
   cursor: pointer;
+  transition: all .3s cubic-bezier(.4,0,.2,1),box-shadow .3s cubic-bezier(.4,0,.2,1);
 }
 .sidebar-toggle:before {
   display: block;
@@ -454,10 +459,12 @@ a.sidebar-nav-item:focus {
 .sidebar-toggle:active,
 #sidebar-checkbox:checked ~ .sidebar-toggle {
   color: #fff;
-  background-color: #505050;
+  background-color: #03A9F4;
 }
 
-
+.sidebar-toggle:hover{
+  box-shadow: 0 1px 5px rgba(0,0,0,.15),0 1px 5px 1px rgba(0,0,0,.15);
+}
 
 
 /* Slide effect
@@ -523,14 +530,21 @@ a.sidebar-nav-item:focus {
  /*文章外面的边框*/
 .post {
   border: 1px solid rgb(200,200,200);
-  box-shadow: 3px 5px 3px rgb(220,220,220);
+ /*  box-shadow: 3px 5px 3px rgb(220,220,220); */
+ box-shadow: 0 1px 5px rgba(0,0,0,.15),0 1px 5px 1px rgba(0,0,0,.15);
   border-radius: 3px;
+}
+.post:hover{
+  box-shadow: 0 1px 5px rgba(0, 0, 0, .15), 0 5px 10px 1px rgba(0, 0, 0, .3), 0 10px 30px rgba(0, 0, 0, .15);
 }
 .post2 {
   border: 1px solid rgb(200,200,200);
-  box-shadow: 3px 5px 3px rgb(220,220,220);
+  box-shadow: 0 1px 5px rgba(0,0,0,.15),0 1px 5px 1px rgba(0,0,0,.15);
   border-radius: 3px;
   padding: 1em;
+}
+.post2:hover{
+  box-shadow: 0 1px 5px rgba(0, 0, 0, .15), 0 5px 10px 1px rgba(0, 0, 0, .3), 0 10px 30px rgba(0, 0, 0, .15);
 }
 .post-name {
   margin-top: 4rem;
@@ -715,6 +729,9 @@ a.sub_pagination-item:hover {
  * Flip the orientation of the page by placing the `.sidebar` and sidebar toggle
  * on the right side.
  */
+#sidebar-min{
+  display: none;
+}
 
 .layout-reverse .sidebar {
   left: auto;
@@ -731,6 +748,10 @@ a.sub_pagination-item:hover {
   -webkit-transform: translateX(-14rem);
       -ms-transform: translateX(-14rem);
           transform: translateX(-14rem);
+}
+
+.layout-reverse #sidebar-checkbox ~ #sidebar-min{
+  display: block;
 }
 
 /*footer*/
@@ -799,10 +820,15 @@ li.page-data-md {
   line-height: 1rem;
 }
 
+li.page-data-md a{
+  color:#727272;
+  transition: all .15s ease-in;
+}
 
 li.page-data-md a:hover,
-li.page-data-md a:focus {
-  color: #ac4142;
+li.page-data-md a:focus,a.title:hover {
+  color: #03A9F4;
+ font-size: 1rem;
 } 
 li.page-data-md span a {
   font-size: .6rem;
@@ -811,6 +837,7 @@ li.page-data-md span a {
 }
 li.page-data-md span a:hover {
   color: #ac4142;
+  text-shadow:0px 0px 2px #000;
 }
 /*分类页*/
 div.page-category {
@@ -823,13 +850,18 @@ div.page-category {
   float: left;
   padding: .2rem 1rem;
   margin: 0 1rem 1rem 0;
-  border-radius: 8px;
+  border-radius: 4px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, .15), 0 1px 5px 1px rgba(0, 0, 0, .15);
+  transition:all .15s ease-in;
 }
 .page-category a:hover,
 .page-category a:focus {
   color: #ac4142;
 }
-
+.page-category a:hover{
+  box-shadow: 0 1px 5px rgba(0, 0, 0, .15), 0 5px 10px 1px rgba(0, 0, 0, .3), 0 10px 30px rgba(0, 0, 0, .15);
+  transform:scale(1.2);
+}
 
 h1.category-name {
   font-size: 1.2rem;
@@ -862,15 +894,18 @@ div.page-tag {
 .page-tag a {
   font-size: .6rem;
   line-height: 1.5rem;
-  background-color: #eee;
+  background-color: rgba(238, 238, 238, 0.38);;
   float: left;
   padding: .1rem .6rem;
   margin: 0 1rem 1rem 0;
-  border-radius: 8px;
+  border-radius: 4px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, .15), 0 1px 5px 1px rgba(0, 0, 0, .15);
+  transition:transform 0.15s ease-in;
 }
-.page-tag a:hover,
-.page-tag a:focus {
-  color: #ac4142;
+
+.page-tag a:hover{
+  box-shadow: 0 1px 5px rgba(0, 0, 0, .15), 0 5px 10px 1px rgba(0, 0, 0, .3), 0 10px 30px rgba(0, 0, 0, .15);
+  transform:scale(1.2);
 }
 
 
@@ -889,10 +924,12 @@ div.article span {
 }
 div.article a {
   font-size: .7rem;
+   transition:font-size 0.15s ease-in;
 }
 div.article a:hover,
 div.article a:focus {
   color: #ac4142;
+  font-size: 1rem;
 }
 
 
@@ -943,7 +980,10 @@ div.article a:focus {
   }
 }
 
-
+#sidebar-min{
+  position: fixed;
+  height: 100%;
+}
 
 /*分页*/
 
@@ -984,4 +1024,71 @@ div.article a:focus {
     border-top-right-radius:    4px;
     border-bottom-right-radius: 4px;
   }
+}
+
+/*rocket in the bottom*/
+.rocket{
+  position: fixed;
+  height: 3.6rem;
+  width: 3.6rem;
+  bottom: 4rem;
+  left: 2rem;
+  z-index: 103;
+}
+.rocket i{
+  font-size: 3.6rem;
+  color: rgba(24, 144, 231, 0.61);
+  cursor: pointer;
+}
+.rocket i:after{
+   content: " ";
+  height: 20px;
+  width: 20px;
+  top: 4.2rem;
+  left: 1.3rem;
+    border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border-bottom-left-radius: 70px;
+  border-bottom-right-radius: 70px;
+  box-shadow: 0px 5px 9px red;
+  border-bottom: 2px solid red;
+  background-color: yellow;
+  position: absolute;
+}
+
+/* material desigin 波浪效果*/
+.waves-button,
+.waves-circle {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+.waves-effect {
+  overflow: hidden;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+}
+.waves-effect .waves-ripple {
+  background-color: rgba(0, 0, 0, 0.1);
+  background-image: -webkit-radial-gradient(rgba(0, 0, 0, 0.1) 0, rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0.3) 40%, rgba(0, 0, 0, 0.4) 50%, rgba(255, 255, 255, 0) 60%);
+  background-image: radial-gradient(rgba(0, 0, 0, 0.1) 0, rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0.3) 40%, rgba(0, 0, 0, 0.4) 50%, rgba(255, 255, 255, 0) 60%);
+  border-radius: 50%;
+  height: 100px;
+  margin-top: -50px;
+  margin-left: -50px;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  -webkit-transform: scale(0, 0);
+  -ms-transform: scale(0, 0);
+  transform: scale(0, 0);
+  -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition-property: opacity, -webkit-transform;
+  transition-property: opacity, transform;
+  width: 100px;
+}
+.waves-effect.waves-light .waves-ripple {
+  background-color: rgba(255, 255, 255, 0.4);
+  background-image: -webkit-radial-gradient(rgba(255, 255, 255, 0.1) 0, rgba(255, 255, 255, 0.2) 30%, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0) 60%);
+  background-image: radial-gradient(rgba(255, 255, 255, 0.1) 0, rgba(255, 255, 255, 0.2) 30%, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0) 60%);
 }
