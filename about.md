@@ -3,6 +3,8 @@ layout: page
 title: About
 ---
 
+###关于博客
+用jekyll搭建的博客，gulp构建压缩代码，sass编写css
 
 ###关于我
 一名普通的编程爱好者。大学**零基础**入门打拼到现在

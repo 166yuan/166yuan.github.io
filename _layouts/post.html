@@ -12,7 +12,11 @@ layout: default
     </h1>
       <p class="post-info"><i class="icon iconfont">&#xe607</i>
         {% if page.author == "166yuan" %}
-          {{ page.author }}原创
+            {% if page.type == "translate" %}
+              {{ page.author }}翻译
+            {% else %}
+               {{ page.author }}原创
+            {% endif %}
         {% else %}
           转载{{ page.author }}
         {% endif %}
