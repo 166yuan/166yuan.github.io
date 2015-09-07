@@ -3,7 +3,6 @@
 
 ##Author
 博客原作者:Mark Otto 
-[github](github.com/mdo)
 博客初修改:soohu
 博客再修改:166yuan
 
