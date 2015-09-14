@@ -1,0 +1,14 @@
+---
+layout: post
+author: cnode
+titile: cnode社区不错的node.js思维导图
+category: 前端
+tag: node.js
+---
+
+#### node的发展史介绍
+[查看大图](http://7vihmc.com1.z0.glb.clouddn.com/Node1.png)                      
+![node的发展史介绍](http://7vihmc.com1.z0.glb.clouddn.com/Node1.png)
+
+#### 模块机制
+![模块机制](http://7vihmc.com1.z0.glb.clouddn.com/Node2.png)
