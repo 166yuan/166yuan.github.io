@@ -1,0 +1,68 @@
+---
+layout: post
+author: 166yuan1
+titile: 设计模式在javascript 里的应用
+category: 专业技术
+tag: 设计模式 
+---
+
+会用框架，不是指会用api就行，我们，还要知道为框架什么这么设计。这样才能为我们后来的深入优化，模仿，学习提供可能性。而设计模式，贯穿在每个框架的背后。无论哪个平台，哪个框架都有共有的设计模式。
+
+而在js的世界里，也自然少不了设计模式。那么设计模式如何在开发过程中应用呢？
+
+一、单例模式
+
+单例，经常也叫singleton。是很多人接触的第一个设计模式。单例在现实应该中也非常常见。一个对象的实例，只初始化生成一个，可以反复使用的实例。从而减少对象在内存的开销。常见的有像java的数据库链接session等。而前端里，像登录注册框。都可以用单例进行设计，而一些我们经常使用到的组件。
+
+	var Singleton = (function () {
+ 	// 存储单例对象
+  	var instance;
+ 
+  	function init() {
+ 		// 初始化方法代码
+   	}
+ 
+  	return {
+ 
+	    	// 如果存在获取此单例实例，如果不存在创建一个单例实例
+	    	getInstance: function () {
+	 
+	      	if ( !instance ) {
+	        	instance = init();
+	      	}
+	 
+	      	return instance;
+	    	}
+ 
+  	};
+
+	})();
+
+简化版的单例
+
+	var singleTon = function (){
+		var instance;
+		function init(){
+			//初始化代码
+		}
+		return functinstanceion(){
+			return instance || instance = init();
+		}
+	}();
+
+单例不仅用与对象。函数也可以进行单例构造
+
+	var singleton = function( fn ){
+    	var instance;
+    	return function(){
+        	return instance || ( instance = fn .apply( this, arguments ) );
+    	}
+	}
+
+	var doingSomething = singleton(function(){
+		console.log("do something");
+	});
+
+	doingSomething();
+
+二、工厂模式
